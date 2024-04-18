@@ -8,7 +8,7 @@ import requests
 def fetch_data(from_date, to_date):
     url = f"https://oracle.varsitylive.in/admin/platform-stats/users/users-created/range?fromDate={from_date}&toDate={to_date}"
     headers = {
-        'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxMzQ0ODgxMSwiZXhwIjoxNzEzNTM1MjExLCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.xLDKzC_vhs8U8z0hw2dVu7sm0qf4WwUuHu5coSPBKG0'
+        'authorization': st.secrets["db_token"]
     }
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
